@@ -1,0 +1,15 @@
+{
+  "exclude": [
+    ".tmp",
+    "node_modules",
+    "typings"
+  ],
+  "compilerOptions": {
+    "removeComments": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": ".tmp/build",
+    "module": "commonjs",
+    "target": "es5"
+  }
+}

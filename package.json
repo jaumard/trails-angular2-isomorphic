@@ -1,0 +1,51 @@
+{
+  "name": "trails-angular-2-isomorphic",
+  "version": "0.0.0",
+  "description": "A new Trails.js Application",
+  "homepage": "http://trailsjs.io",
+  "author": {
+    "name": "jaumard",
+    "email": "jimmy.aumard@gmail.com",
+    "url": "https://github.com/jaumard"
+  },
+  "main": "index.js",
+  "keywords": [
+    "trails",
+    "trailsjs"
+  ],
+  "dependencies": {
+    "express": "^4.13.4",
+    "sqlite3": "^3.1.4",
+    "trailpack-core": "^1.0.0-beta-6",
+    "trailpack-express": "^1.0.0",
+    "trailpack-footprints": "^1.0.0",
+    "trailpack-repl": "^1.0.6",
+    "trailpack-router": "^1.0.0-beta-4",
+    "trailpack-sequelize": "^0.1.0",
+    "trails": "^1.0.0",
+    "trails-controller": "^1.0.0-beta-2",
+    "trails-model": "^1.0.0-beta-2",
+    "trails-policy": "^1.0.2",
+    "trails-service": "1.0.0-beta-2",
+    "winston": "^2.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.8",
+    "eslint-config-trails": "latest",
+    "mocha": "^2.4",
+    "supertest": "^1.2"
+  },
+  "scripts": {
+    "postinstall": "typings install",
+    "test": "eslint . && mocha",
+    "start": "node .tmp/build/server.js"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "https://github.com/jaumard/trails-angular2-isomorphic",
+  "license": "MIT"
+}
