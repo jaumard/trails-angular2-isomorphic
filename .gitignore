@@ -1,4 +1,7 @@
+/typings/globals
 /.tmp
 /.idea
 node_modules
 coverage
+/dist
+/typings/index.d.ts

@@ -7,9 +7,10 @@
   "compilerOptions": {
     "removeComments": true,
     "moduleResolution": "node",
+    "noLib": true,
     "noImplicitAny": false,
     "outDir": ".tmp/build",
     "module": "commonjs",
-    "target": "es5"
+    "target": "es6"
   }
 }

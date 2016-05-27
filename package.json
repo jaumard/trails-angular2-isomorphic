@@ -20,7 +20,7 @@
     "trailpack-express": "^1.0.0",
     "trailpack-footprints": "^1.0.0",
     "trailpack-repl": "^1.0.6",
-    "trailpack-router": "^1.0.0-beta-4",
+    "trailpack-router": "^1.0.2",
     "trailpack-sequelize": "^0.1.0",
     "trails": "^1.0.0",
     "trails-controller": "^1.0.0-beta-2",
@@ -32,13 +32,18 @@
   "devDependencies": {
     "eslint": "^2.8",
     "eslint-config-trails": "latest",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.13.5",
+    "merge-stream": "^1.0.0",
     "mocha": "^2.4",
-    "supertest": "^1.2"
+    "supertest": "^1.2",
+    "typescript": "^1.8.10"
   },
   "scripts": {
     "postinstall": "typings install",
     "test": "eslint . && mocha",
-    "start": "node .tmp/build/server.js"
+    "start": "gulp && node dist/server.js"
   },
   "engines": {
     "node": ">= 4.0.0"

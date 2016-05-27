@@ -1,7 +1,7 @@
 'use strict'
 
 import {Request, Response} from 'express'
-import Controller from 'trails-controller'
+import * as Controller from 'trails-controller'
 
 /**
  * @module DefaultController
@@ -10,7 +10,7 @@ import Controller from 'trails-controller'
  * @see {@link http://trailsjs.io/doc/api/controllers}
  * @this TrailsApp
  */
-export default class DefaultController extends Controller {
+module.exports = class DefaultController extends Controller {
   app: any;
   /**
    * Return some info about this application

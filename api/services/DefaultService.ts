@@ -1,6 +1,6 @@
 'use strict'
 
-import Service from 'trails-service'
+import * as Service from 'trails-service'
 
 /**
  * @module DefaultService
@@ -9,7 +9,7 @@ import Service from 'trails-service'
  * @see {@link http://trailsjs.io/doc/api/services}
  * @this TrailsApp
  */
-export default class DefaultService extends Service {
+module.exports = class DefaultService extends Service {
 
   /**
    * Return some info about this application
