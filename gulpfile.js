@@ -24,7 +24,7 @@ gulp.task('compileServer', () => {
 
     // The `base` part is needed so
     //  that `dest()` doesnt map folders correctly after rename
-    return gulp.src(['!node_modules', '!node_modules/**', '!src', '!src/**', '**/*.ts'], { base: './' })
+    return gulp.src(['!node_modules', '!node_modules/**/*', '!src', '!src/**/*', '!typings', '!typings/**/*', '**/*.ts'], { base: './' })
         .pipe(ts(tsProject))
         .pipe(rename(path => {
             path.extname = '.js'

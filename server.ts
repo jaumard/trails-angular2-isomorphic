@@ -1,4 +1,4 @@
-/// <reference path="typings/index.d.ts" />
+/// <reference path="typings/main.d.ts" />
 /**
  * @module server
  *

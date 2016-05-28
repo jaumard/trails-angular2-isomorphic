@@ -1,6 +1,8 @@
 {
   "exclude": [
     ".tmp",
+    "dist",
+    "src",
     "node_modules",
     "typings"
   ],
