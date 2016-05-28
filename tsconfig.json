@@ -1,16 +1,17 @@
 {
-  "exclude": [
-    ".tmp",
-    "node_modules",
-    "typings"
-  ],
   "compilerOptions": {
-    "removeComments": true,
-    "moduleResolution": "node",
-    "noLib": true,
-    "noImplicitAny": false,
-    "outDir": ".tmp/build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
     "module": "commonjs",
-    "target": "es6"
-  }
+    "removeComments": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "typings/main.d.ts",
+    "typings/main",
+    "node_modules"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
 }

@@ -18,14 +18,13 @@ gulp.task('copy', () => {
   return merge(tasks);
 })
 
-gulp.task('compile', () => {
+gulp.task('compileServer', () => {
     // Using my existing tsconfig.json file
-    const tsProject = ts.createProject('./tsconfig.json');
-  //console.log(tsProject);
+    const tsProject = ts.createProject('./tsconfig.server.json');
 
     // The `base` part is needed so
     //  that `dest()` doesnt map folders correctly after rename
-    return gulp.src('**/*.ts', { base: './' })
+    return gulp.src(['!node_modules', '!node_modules/**', '!src', '!src/**', '**/*.ts'], { base: './' })
         .pipe(ts(tsProject))
         .pipe(rename(path => {
             path.extname = '.js'
@@ -33,4 +32,19 @@ gulp.task('compile', () => {
         .pipe(gulp.dest(dist))
 });
 
-gulp.task('default', ['compile', 'copy'])
+
+gulp.task('compileClient', () => {
+  // Using my existing tsconfig.json file
+  const tsProject = ts.createProject('./tsconfig.json');
+
+  // The `base` part is needed so
+  //  that `dest()` doesnt map folders correctly after rename
+  return gulp.src('src/**/*.ts', { base: './' })
+    .pipe(ts(tsProject))
+    .pipe(rename(path => {
+      path.extname = '.js'
+    }))
+    .pipe(gulp.dest(dist))
+});
+
+gulp.task('default', ['compileServer', 'compileClient'])

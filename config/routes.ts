@@ -17,7 +17,17 @@ module.exports = [
   {
     method: 'GET',
     path: '/',
-    handler: 'ViewController.helloWorld'
+    handler: 'ViewController.ng'
+  },
+  {
+    method: 'GET',
+    path: '/home',
+    handler: 'ViewController.ng'
+  },
+  {
+    method: 'GET',
+    path: '/about',
+    handler: 'ViewController.ng'
   },
 
   /**

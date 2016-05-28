@@ -1,5 +1,18 @@
 'use strict'
 
+// Angular 2 Universal
+import {
+  provide,
+  enableProdMode,
+  expressEngine,
+  REQUEST_URL,
+  ORIGIN_URL,
+  BASE_URL,
+  NODE_ROUTER_PROVIDERS,
+  NODE_HTTP_PROVIDERS,
+  ExpressEngineConfig
+} from 'angular2-universal';
+
 /**
  * Server Configuration
  * (app.config.web)
@@ -66,19 +79,18 @@ module.exports = {
   /**
    * The port to bind the web server to
    */
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
 
   /**
    * Alternate method to add multiple template engine, for single view template use config.view.engine
    */
-  /*
+
   views: {
     engines: {
-      // html: require('some-view-engine')
+      html: expressEngine
     },
-    path: 'views'
+    path: 'src'
   },
-  */
 
   /**
    * SSL options
