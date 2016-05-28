@@ -47,4 +47,4 @@ gulp.task('compileClient', () => {
     .pipe(gulp.dest(dist))
 });
 
-gulp.task('default', ['compileServer', 'compileClient'])
+gulp.task('default', ['compileServer', 'compileClient', 'copy'])
