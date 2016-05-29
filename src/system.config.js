@@ -8,15 +8,11 @@
     'app': 'app', // 'dist',
     '@angular': 'node_modules/@angular',
     'rxjs': 'node_modules/rxjs',
-    'angular2-universal': 'node_modules/angular2-universal/dist/polyfills.js',
-    'angular2-universal-polyfills': 'node_modules/angular2-universal-polyfills/dist/dev.js'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app': {main: 'main.js', defaultExtension: 'js'},
     'rxjs': {defaultExtension: 'js'},
-    'angular2-universal': {defaultExtension: 'js'},
-    'angular2-universal-polyfills': {defaultExtension: 'js'},
   };
   var ngPackageNames = [
     'common',

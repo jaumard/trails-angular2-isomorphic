@@ -25,6 +25,9 @@ gulp.task('copyClient', () => {
   gulp.src([
       'node_modules/rxjs/**/*',
       'node_modules/zone.js/**/*',
+      'node_modules/core-js/**/*',
+      'node_modules/reflect-metadata/**/*',
+      'node_modules/systemjs/**/*',
       'node_modules/@angular/**/*',
       'node_modules/angular2-universal/**/*',
       'node_modules/angular2-universal-polyfills/**/*'
