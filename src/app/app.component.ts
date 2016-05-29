@@ -99,11 +99,11 @@ export class App {
     setTimeout(() => {
       this.server = 'This was rendered from the server!';
     }, 10);
-
+    /*
     this.http.get('/data.json')
       .subscribe(res => {
         this.data = res.json();
-      });
+      });*/
   }
 
 }

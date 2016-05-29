@@ -1,5 +1,5 @@
 /// <reference path="../typings/browser.d.ts" />
-import 'angular2-universal/polyfills';
+import 'angular2-universal-polyfills';
 
 import {bootstrap, enableProdMode, BROWSER_ROUTER_PROVIDERS, BROWSER_HTTP_PROVIDERS} from 'angular2-universal';
 

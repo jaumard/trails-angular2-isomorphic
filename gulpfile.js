@@ -1,6 +1,8 @@
 'use strict'
 const gulp = require('gulp')
+const path = require('path')
 const ts = require('gulp-typescript')
+const del = require('del')
 const rename = require('gulp-rename')
 const merge = require('merge-stream')
 
@@ -8,7 +10,7 @@ const dist = 'dist'
 
 const toCopy = ['package.json', 'config/**/*.json']
 
-gulp.task('copy', () => {
+gulp.task('copyServer', () => {
   var tasks = toCopy.map(element => {
     return gulp.src(element, {base: './'})
       // ... other steps ...
@@ -16,6 +18,33 @@ gulp.task('copy', () => {
   });
 
   return merge(tasks);
+})
+
+gulp.task('copyClient', () => {
+  del.sync(path.join(dist, 'src', 'node_modules'));
+  gulp.src([
+      'node_modules/rxjs/**/*',
+      'node_modules/zone.js/**/*',
+      'node_modules/@angular/**/*',
+      'node_modules/angular2-universal/**/*',
+      'node_modules/angular2-universal-polyfills/**/*'
+    ], { base: './' })
+    .pipe(gulp.dest(path.join(dist, 'src')))
+  gulp.src([
+  'src/index.html',
+    'src/*.png'
+    ], { base: './' })
+    .pipe(gulp.dest(path.join(dist)))
+
+  return gulp.src([
+      'node_modules/zone.js/dist/zone.min.js',
+      'node_modules/es6-promise/dist/es6-promise.min.js',
+      'node_modules/core-js/client/shim.min.js',
+      'node_modules/systemjs/dist/system.src.js',
+      'node_modules/reflect-metadata/Reflect.js',
+      'src/system.config.js'
+    ])
+    .pipe(gulp.dest(path.join(dist, 'src', 'lib')))
 })
 
 gulp.task('compileServer', () => {
@@ -47,4 +76,4 @@ gulp.task('compileClient', () => {
     .pipe(gulp.dest(dist))
 });
 
-gulp.task('default', ['compileServer', 'compileClient', 'copy'])
+gulp.task('default', ['compileServer', 'compileClient', 'copyServer', 'copyClient'])
