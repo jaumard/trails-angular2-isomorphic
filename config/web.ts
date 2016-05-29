@@ -1,16 +1,7 @@
 'use strict'
-
 // Angular 2 Universal
 import {
-  provide,
-  enableProdMode,
-  expressEngine,
-  REQUEST_URL,
-  ORIGIN_URL,
-  BASE_URL,
-  NODE_ROUTER_PROVIDERS,
-  NODE_HTTP_PROVIDERS,
-  ExpressEngineConfig
+  expressEngine
 } from 'angular2-universal';
 
 /**

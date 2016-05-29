@@ -1,4 +1,5 @@
 /// <reference path="typings/main.d.ts" />
+import "zone.js";
 import 'reflect-metadata';
 /**
  * @module server

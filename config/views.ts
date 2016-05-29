@@ -6,7 +6,12 @@
  */
 
 'use strict'
+// Angular 2 Universal
+import {
+  expressEngine
+} from 'angular2-universal';
+
 
 module.exports = {
-
+  engine: expressEngine
 }
