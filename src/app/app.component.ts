@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import {Component, Directive, ElementRef, Renderer} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Http} from '@angular/http';
@@ -70,18 +69,14 @@ export class About { }
       <div>
         <span x-large>Universal JavaScript {{ title }}!</span>
       </div>
-
       Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value" autofocus>
       <br><br>
-
       <strong>Async data call return value:</strong>
       <pre>{{ data | json }}</pre>
-
       <strong>Router-outlet:</strong>
       <main>
         <router-outlet></router-outlet>
       </main>
-
       <blockquote>{{ server }}</blockquote>
     </div>
   </div>
@@ -104,11 +99,11 @@ export class App {
     setTimeout(() => {
       this.server = 'This was rendered from the server!';
     }, 10);
-    /*
+
     this.http.get('/data.json')
       .subscribe(res => {
         this.data = res.json();
-      });*/
+      });
   }
 
 }

@@ -1,4 +1,5 @@
 /// <reference path="typings/main.d.ts" />
+import 'reflect-metadata';
 /**
  * @module server
  *

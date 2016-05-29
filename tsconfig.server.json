@@ -4,7 +4,8 @@
     "dist",
     "src",
     "node_modules",
-    "typings"
+    "typings/main.d.ts",
+    "typings/main"
   ],
   "compilerOptions": {
     "removeComments": true,
