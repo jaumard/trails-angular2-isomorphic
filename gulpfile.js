@@ -34,7 +34,7 @@ gulp.task('copyClient', () => {
     ], { base: './' })
     .pipe(gulp.dest(path.join(dist, 'src')))
   gulp.src([
-  'src/index.html',
+  //'src/index.html',
     'src/*.png'
     ], { base: './' })
     .pipe(gulp.dest(path.join(dist)))
