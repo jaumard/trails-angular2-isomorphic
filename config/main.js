@@ -21,6 +21,7 @@ module.exports = {
     require('trailpack-router'),
     require('trailpack-express'),
     require('trailpack-sequelize'),
+    require('trailpack-gulp'),
     require('trailpack-footprints')
   ],
 
@@ -30,6 +31,6 @@ module.exports = {
   paths: {
     root: path.resolve(__dirname, '..'),
     temp: path.resolve(__dirname, '..', '.tmp'),
-    www: path.resolve(__dirname, '..', 'src'),
+    www: path.resolve(__dirname, '..', 'dist', 'src')
   }
 }

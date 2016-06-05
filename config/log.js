@@ -7,7 +7,7 @@
 
 'use strict'
 
-import winston = require('winston')
+const winston = require('winston')
 
 module.exports = {
 

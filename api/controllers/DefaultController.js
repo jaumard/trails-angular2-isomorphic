@@ -1,7 +1,6 @@
 'use strict'
 
-import {Request, Response} from 'express'
-import * as Controller from 'trails-controller'
+const Controller = require('trails-controller')
 
 /**
  * @module DefaultController
@@ -11,11 +10,11 @@ import * as Controller from 'trails-controller'
  * @this TrailsApp
  */
 module.exports = class DefaultController extends Controller {
-  app: any;
+
   /**
    * Return some info about this application
    */
-  info(req: Request, res: Response) {
+  info(req, res) {
     res.status(200).json(this.app.services.DefaultService.getApplicationInfo())
   }
 }

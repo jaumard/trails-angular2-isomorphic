@@ -1,9 +1,6 @@
 'use strict'
-// Angular 2 Universal
-import {
-  expressEngine
-} from 'angular2-universal';
 
+const ng2U = require('angular2-universal')
 /**
  * Server Configuration
  * (app.config.web)
@@ -78,10 +75,11 @@ module.exports = {
 
   views: {
     engines: {
-      html: expressEngine
+      'ng2.html': ng2U.expressEngine
     },
     path: 'src'
   },
+
 
   /**
    * SSL options

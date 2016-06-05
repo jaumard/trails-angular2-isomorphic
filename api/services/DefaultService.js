@@ -1,6 +1,6 @@
 'use strict'
 
-import * as Service from 'trails-service'
+const Service = require('trails-service')
 
 /**
  * @module DefaultService
