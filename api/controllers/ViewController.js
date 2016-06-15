@@ -2,8 +2,8 @@
 
 const Controller = require('trails-controller')
 
-const ng2 = require('@angular/core')
-const ng2U = require('angular2-universal')
+const ng2 = require('../../dist/src/node_modules/@angular/core')
+const ng2U = require('../../dist/src/node_modules/angular2-universal')
 ng2.enableProdMode()
 
 const PACKAGES = {
@@ -51,6 +51,9 @@ const PACKAGES = {
     format: 'cjs',
     main: 'index',
     defaultExtension: 'js'
+  },
+  rxjs: {
+    defaultExtension: 'js'
   }
 };
 module.exports = class ViewController extends Controller {
@@ -61,10 +64,11 @@ module.exports = class ViewController extends Controller {
       // client url for systemjs
       buildClientScripts: true,
       systemjs: {
-        componentUrl: 'src/todo/browser',
+        componentUrl: 'todo/browser',
         map: {
           'angular2-universal': 'node_modules/angular2-universal',
-          '@angular': 'node_modules/@angular'
+          '@angular': 'node_modules/@angular',
+          'rxjs': 'node_modules/rxjs'
         },
         packages: PACKAGES
       },

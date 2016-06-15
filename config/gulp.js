@@ -1,8 +1,6 @@
 const gulp = require('gulp')
-const watch = require('gulp-watch')
 const rename = require('gulp-rename')
 const ts = require('gulp-typescript')
-const del = require('del')
 const path = require('path')
 
 const dest = './dist'
@@ -12,12 +10,8 @@ module.exports = {
   defaultTaskName: 'default',
 
   tasks: {
-    default: ['clean', 'compile', 'copy'],
-    production: ['clean', 'compile', 'copy'],
-    clean: (done) => {
-      del.sync([dest])
-      done()
-    },
+    default: ['compile', 'copy'],
+    production: ['compile', 'copy'],
     compile: () => {
       const tsProject = ts.createProject('./src/tsconfig.json');
 
@@ -31,22 +25,10 @@ module.exports = {
         .pipe(gulp.dest(dest))
     },
     copy: () =>{
-      gulp.src([
+      return gulp.src([
           'src/todo/css/*'
         ], { base: './' })
-        .pipe(gulp.dest(dest))
-      return gulp.src([
-          'node_modules/rxjs/**/*',
-          'node_modules/zone.js/**/*',
-          'node_modules/core-js/**/*',
-          'node_modules/reflect-metadata/**/*',
-          'node_modules/systemjs/**/*',
-          'node_modules/@angular/**/*',
-          'node_modules/angular2-universal/**/*',
-          'node_modules/angular2-universal-polyfills/**/*'
-        ], { base: './' })
-        .pipe(gulp.dest(path.join(dest, 'src')))
-
+        .pipe(gulp.dest(dest));
     }
   }
 
