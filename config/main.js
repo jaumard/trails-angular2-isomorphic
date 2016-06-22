@@ -30,7 +30,7 @@ module.exports = {
    */
   paths: {
     root: path.resolve(__dirname, '..'),
-    temp: path.resolve(__dirname, '..', '.tmp'),
-    www: path.resolve(__dirname, '..', 'dist', 'src')
+    temp: path.resolve(__dirname, '..', 'dist'),
+    www: path.resolve(__dirname, '..', 'dist', 'app')
   }
 }

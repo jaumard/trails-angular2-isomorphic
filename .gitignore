@@ -3,4 +3,4 @@
 node_modules
 coverage
 /dist/**/*
-/src/typings
+/app/typings

@@ -31,11 +31,11 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "^0.19.18",
     "trailpack-core": "^1.0.0",
-    "trailpack-express": "^1.0.1",
+    "trailpack-express": "^1.0.4",
     "trailpack-footprints": "^1.0.1",
     "trailpack-gulp": "^1.0.1",
     "trailpack-repl": "^1.0.0",
-    "trailpack-router": "^1.0.0",
+    "trailpack-router": "^1.0.4",
     "trailpack-sequelize": "^1.0.0",
     "trails": "^1.0.4",
     "trails-controller": "^1.0.0-beta-2",
@@ -58,7 +58,7 @@
     "supertest": "^1.2"
   },
   "scripts": {
-    "postinstall": "cd src && typings install",
+    "postinstall": "cd app && typings install",
     "test": "eslint . && mocha"
   },
   "engines": {

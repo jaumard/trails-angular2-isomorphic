@@ -3,7 +3,7 @@ const rename = require('gulp-rename')
 const ts = require('gulp-typescript')
 const path = require('path')
 
-const dest = './dist'
+const dest = 'dist'
 
 module.exports = {
 
@@ -13,11 +13,11 @@ module.exports = {
     default: ['compile', 'copy'],
     production: ['compile', 'copy'],
     compile: () => {
-      const tsProject = ts.createProject('./src/tsconfig.json');
+      const tsProject = ts.createProject('./app/tsconfig.json');
 
       // The `base` part is needed so
       //  that `dest()` doesnt map folders correctly after rename
-      return gulp.src(['src/**/*.ts'], { base: './' })
+      return gulp.src(['app/**/*.ts'], { base: './' })
         .pipe(ts(tsProject))
         .pipe(rename(path => {
           path.extname = '.js'
@@ -26,7 +26,7 @@ module.exports = {
     },
     copy: () =>{
       return gulp.src([
-          'src/todo/css/*'
+          'app/todo/css/*'
         ], { base: './' })
         .pipe(gulp.dest(dest));
     }

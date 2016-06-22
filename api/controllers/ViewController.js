@@ -2,8 +2,8 @@
 
 const Controller = require('trails-controller')
 
-const ng2 = require('../../dist/src/node_modules/@angular/core')
-const ng2U = require('../../dist/src/node_modules/angular2-universal')
+const ng2 = require('@angular/core')
+const ng2U = require('angular2-universal')
 ng2.enableProdMode()
 
 const PACKAGES = {
@@ -57,9 +57,16 @@ const PACKAGES = {
   }
 };
 module.exports = class ViewController extends Controller {
-  helloWorld(req, res) {
-    const todoApp = require('../../dist/src/todo/app')
-    let queryParams = ng2U.queryParamsToBoolean(req.query);
+  init() {
+    if(!this.todoApp) {
+      this.todoApp = require('../../dist/app/todo/app')
+    }
+  }
+
+  todo(req, res) {
+    this.init()
+    const todoApp = this.todoApp
+    let queryParams = ng2U.queryParamsToBoolean(req.query)
     let options = Object.assign(queryParams , {
       // client url for systemjs
       buildClientScripts: true,
@@ -75,7 +82,7 @@ module.exports = class ViewController extends Controller {
       directives: [todoApp.TodoApp],
       platformProviders: [
         ng2.provide(ng2U.ORIGIN_URL, {useValue: 'http://localhost:3000'}),
-        ng2.provide(ng2U.BASE_URL, {useValue: '/todo'}),
+        ng2.provide(ng2U.BASE_URL, {useValue: '/'}),
       ],
       providers: [
         ng2.provide(ng2U.REQUEST_URL, {useValue: req.originalUrl})
@@ -83,9 +90,8 @@ module.exports = class ViewController extends Controller {
       data: {},
       async: queryParams.async !== false,
       preboot: queryParams.preboot === false ? null : {debug: true, uglify: false}
+    })
 
-    });
-
-    res.render('todo/index', options);
+    res.render('todo/index', options)
   }
 }

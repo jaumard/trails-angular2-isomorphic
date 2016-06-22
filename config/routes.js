@@ -17,9 +17,17 @@ module.exports = [
   {
     method: 'GET',
     path: '/',
-    handler: 'ViewController.helloWorld'
+    handler: 'ViewController.todo'
   },
-
+  {
+    method: 'GET',
+    path: '/node_modules',
+    handler: {
+      directory: {
+        path: 'node_modules'
+      }
+    }
+  },
   /**
    * Constrain the DefaultController.info handler to accept only GET requests.
    */
