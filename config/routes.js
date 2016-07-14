@@ -16,8 +16,8 @@ module.exports = [
    */
   {
     method: 'GET',
-    path: '/',
-    handler: 'ViewController.todo'
+    path: '/*',
+    handler: 'ViewController.ng'
   },
   {
     method: 'GET',

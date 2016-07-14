@@ -1,0 +1,42 @@
+
+/* CORE PROJECT SCSS */
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+$dark: #333;
+$headerHeight: 60px;
+$footerHeight: 60px;
+$defaultPadding: 10px;
+$textColor: #FFF;
+
+html, body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(../images/trees-and-rivers.svg) bottom repeat-x;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.menu-group-left {
+  float: left;
+}
+.menu-group-right {
+  float: right;
+}
+
+.menu-bar li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.menu-bar li a {
+  color: $textColor;
+
+}

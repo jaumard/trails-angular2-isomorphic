@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <title>Trails / Angular2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <link rel="stylesheet" href="/style/scss/app.css" media="screen" title="no title" charset="utf-8">
+  <!-- 1. Load libraries -->
+   <!-- Polyfill(s) for older browsers -->
+  <script src="/node_modules/core-js/client/shim.min.js"></script>
+  <script src="/node_modules/zone.js/dist/zone.js"></script>
+  <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="/node_modules/systemjs/dist/system.src.js"></script>
+  <!-- 2. Configure SystemJS -->
+  <script src="/systemjs.config.js"></script>
+
+  <script>
+    System.import('app').catch(function(err){ console.error(err); });
+  </script>
+  <script src="//localhost:3001/livereload.js"></script>
+</head>
+<body>
+
+  <!-- Angular 2 App -->
+  <app>
+    Loading...
+  </app>
+
+</body>
+</html>

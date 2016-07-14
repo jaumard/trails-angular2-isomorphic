@@ -20,8 +20,8 @@ module.exports = {
     require('trailpack-repl'),
     require('trailpack-router'),
     require('trailpack-express'),
+    require('trailpack-treefrog'),
     require('trailpack-sequelize'),
-    require('trailpack-gulp'),
     require('trailpack-footprints')
   ],
 

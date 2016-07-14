@@ -78,7 +78,7 @@ module.exports = {
       'ng2.html': ng2U.expressEngine
     },
     path: 'app'
-  },
+  }
 
 
   /**

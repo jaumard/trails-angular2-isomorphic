@@ -1,0 +1,22 @@
+@import "../../style/scss/app";
+
+.footer-container {
+  height: $footerHeight;
+  background: $dark;
+}
+
+.footer-container ul {
+  list-style: none;
+}
+
+.footer-container img {
+  height: 40px;
+}
+
+.footer-container .menu-group {
+  padding: $defaultPadding;
+}
+
+.footer-container .menu-bar li {
+  padding-top: $defaultPadding;
+}

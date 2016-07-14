@@ -1,0 +1,22 @@
+@import "../../style/scss/app";
+
+.header-container {
+  height: $headerHeight;
+  background: $dark;
+}
+
+.header-container ul {
+  list-style: none;
+}
+
+.header-container img {
+  height: 40px;
+}
+
+.header-container .menu-group {
+  padding: $defaultPadding;
+}
+
+.header-container .menu-bar li {
+  padding-top: $defaultPadding;
+}
