@@ -34,7 +34,7 @@ module.exports = class ViewController extends Controller {
       async: true,
 
       beautify: true,
-      preboot: {buffer: false, debug: true, uglify: false}
+      preboot: {buffer: false, debug: true, uglify: false}//FIXME if buffer = true app is not launched anymore after rendering
     }
 
     res.render('index', options)
